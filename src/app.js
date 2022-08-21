@@ -13,11 +13,12 @@ app.engine('dust', dust.engine({
 app.set('view engine', 'dust');
 app.set('views', path.resolve(__dirname, './views'));
 
-
+const taskRoute = require('./routes/task');
+app.use('/task', taskRoute);
 
 app.get('/', function (req, res) {
     res.render('index', {
-      title: 'Hello world',
+      title: 'Home - Todolist',
     });
 });
 
