@@ -3,6 +3,9 @@ const app = express();
 var path = require('path');
 var dust = require('express-dustjs');
 const PORT = 3000;
+const db = require('./database/database');
+
+db.then(() => console.log('Connected to MongoDB')).catch(err => console.log(err))
 
 app.use(express.json())
 app.use(express.static(__dirname + "/public/"));
