@@ -12,6 +12,7 @@ router.post('/createTask', async(req, res) => {
 });
 
 router.delete('/deleteTask', async(req, res) => {
+    await utils.deleteTask(req.body.id)
     res.sendStatus(200)
 });
 

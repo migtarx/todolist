@@ -23,7 +23,7 @@ app.use('/task', taskRoute);
 app.get('/', async(req, res) => {
     const tasks = await utils.getTasks();
     res.render('index', {
-      title: 'Home - Todolist',
+      ptitle: 'Home - Todolist',
       tasks: tasks
     });
 });

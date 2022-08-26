@@ -21,7 +21,6 @@ const createTask = async(title, description) => {
             title: title,
             description: description
         });
-        let newTaskId;
         const saveNewTask = await newTask.save()
         return saveNewTask.id;
     } catch (error) {
@@ -29,8 +28,14 @@ const createTask = async(title, description) => {
     }
 }
 
-const deleteTask = async(title, description) => {
-    
+const deleteTask = async(taskId) => {
+    const decryptedTaskId = cryptr.decrypt(taskId);
+    try {
+        await Task.deleteOne({ _id: decryptedTaskId })
+        return 'OK'
+    } catch (error) {
+        return error;
+    }
 }
 
-module.exports = { createTask, getTasks }
+module.exports = { createTask, getTasks, deleteTask }
