@@ -1,0 +1,10 @@
+{#tasks}
+    <div class="card w-50 mt-3 ms-5">
+        <div class="card-body">
+            <span></span>
+            <h5 class="card-title">{title}</h5>
+            <p class="card-text">{description}</p>
+            <a class="btn btn-danger" onclick="deleteTask('{id}');">Delete</a>
+        </div>
+    </div>
+{/ tasks}

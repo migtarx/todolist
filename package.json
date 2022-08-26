@@ -1,0 +1,29 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon -e js,dust ./src/app.js",
+    "start": "node ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelpbiko/todolist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguelpbiko/todolist/issues"
+  },
+  "homepage": "https://github.com/miguelpbiko/todolist#readme",
+  "dependencies": {
+    "cryptr": "^6.0.3",
+    "dotenv": "^16.0.1",
+    "dustjs-linkedin": "^3.0.1",
+    "express": "^4.18.1",
+    "express-dustjs": "^1.1.3",
+    "mongoose": "^6.5.2"
+  }
+}
