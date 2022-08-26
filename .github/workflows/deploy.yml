@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     runs-on: [self-hosted, linux, x64, "${{ github.ref_name }}"]
-    env:
-      CRYPTR_SECRET: ${{ secrets.CRYPTR_SECRET }}
     strategy:
       matrix: 
         node-version: [16.x]
@@ -20,6 +18,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm i
+    - name: 'Create env file'
+        run: |
+          touch .env
+          echo CRYPTR_SECRET=${{ secrets.CRYPTR_SECRET }} >> .env
     - if: github.ref == 'refs/heads/master'
       name: production server app restart
       run: pm2 restart TodoListServer
