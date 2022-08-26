@@ -2,7 +2,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master, develop, test ]
+    branches: [ master, develop ]
 
 jobs:
   build:
@@ -20,4 +20,4 @@ jobs:
     - run: npm i
     - if: github.ref == 'refs/heads/master'
       name: production server app restart
-      run: pm2 restart NotionLibServer
+      run: pm2 restart TodoListServer

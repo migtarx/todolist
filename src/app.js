@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 var path = require('path');
 var dust = require('express-dustjs');
-const PORT = 3000;
+const arguments = process.argv[2];
+const PORT = arguments == "-dev" ? 3000 : 1100;
 const db = require('./database/database');
 const utils = require('./utils/dbcontroller');
+
 
 db.then(() => console.log('Connected to MongoDB')).catch(err => console.log(err))
 

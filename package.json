@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon -e js,dust ./src/app.js",
-    "start": "node ./src/app.js"
+    "dev": "nodemon ./src/app.js -dev",
+    "prod": "pm2 start --name=TodoListServer ./src/app.js"
   },
   "repository": {
     "type": "git",
