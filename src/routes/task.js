@@ -7,8 +7,8 @@ router.get('/getTasks', async(req, res) => {
 });
 
 router.post('/createTask', async(req, res) => {
-    const createdTaskId = await utils.createTask(req.body.title, req.body.description);
-    res.send(createdTaskId)
+    await utils.createTask(req.body.title, req.body.description);
+    res.sendStatus(200)
 });
 
 router.delete('/deleteTask', async(req, res) => {
