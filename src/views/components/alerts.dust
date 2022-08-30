@@ -1,0 +1,6 @@
+<div id="errorNotification" class="alert alert-danger alert-dismissible" style="position: absolute; margin-top: 10vh; right: 0; display: none; z-index: 9999;">
+   <span id="errorNotificationMsg"></span>
+</div>
+<div id="successNotification" class="alert alert-success alert-dismissible" style="position: absolute; margin-top: 10vh; right: 0; display: none; z-index: 9999;">
+   <span id="successNotificationMsg"></span>
+</div>
